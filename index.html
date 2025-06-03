@@ -501,17 +501,19 @@
         }
 
         .table-header {
-            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+            background: #fff;
             padding: 32px 40px 24px 40px;
             border-bottom: none;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            box-shadow: 0 4px 24px rgba(60, 120, 200, 0.10), 0 1.5px 0 #e3e8f0 inset;
+            border: 2px solid #e3e8f0;
         }
 
         .table-title {
             font-size: 28px;
             font-weight: 800;
-            color: #222b45;
+            color: #2563eb;
             display: flex;
             align-items: center;
             margin-bottom: 8px;
@@ -525,6 +527,7 @@
             border-radius: 20px;
             display: inline-block;
             font-weight: 700;
+            box-shadow: 0 1px 4px rgba(60,120,200,0.07);
         }
 
         .table-container {
@@ -541,8 +544,8 @@
         }
 
         th {
-            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
-            color: #fff;
+            background: #fff;
+            color: #2563eb;
             padding: 18px 24px;
             text-align: left;
             font-weight: 800;
@@ -550,6 +553,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border: none;
+            border-bottom: 2.5px solid #e3e8f0;
         }
 
         td {
@@ -714,6 +718,19 @@
             
             .progress-bar-container {
                 margin: 0;
+                width: 100%;
+                min-width: 0;
+                box-sizing: border-box;
+                height: 14px;
+                max-width: 100vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .progress-bar {
+                border-radius: 10px !important;
+                min-width: 100%;
+                width: 100%;
+                height: 100%;
             }
         }
 
@@ -1005,6 +1022,9 @@
                     📸 Capturas del Sistema
                     <span class="gallery-count">(22)</span>
                 </h2>
+                <p style="text-align: center; color: #656d76; margin-top: 8px; font-size: 14px;">
+                    👆 Haz clic en cualquier imagen para verla en tamaño completo
+                </p>
             </div>
             
             <div class="gallery-grid">
