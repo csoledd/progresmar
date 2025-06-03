@@ -149,15 +149,10 @@
             height: 100%;
             background: linear-gradient(90deg, #1a7f37, #22c55e);
             border-radius: 10px;
-            width: 0%;
-            transition: width 3s ease-out;
+            width: 100%;
+            min-width: 100%;
+            transition: none;
             position: relative;
-            animation: fillProgress 3s ease-out forwards;
-        }
-
-        @keyframes fillProgress {
-            from { width: 0%; }
-            to { width: 100%; }
         }
 
         .progress-text {
@@ -455,9 +450,11 @@
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 24px;
+            justify-content: center;
+            align-items: stretch;
         }
 
         .gallery-item {
@@ -466,11 +463,10 @@
             overflow: hidden;
             transition: all 0.3s ease;
             background: white;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .gallery-item img {
@@ -479,10 +475,8 @@
             object-fit: cover;
             cursor: pointer;
             transition: transform 0.3s ease;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
+            display: block;
+            margin: 0 auto;
         }
 
         .gallery-caption {
@@ -493,6 +487,8 @@
             font-weight: 500;
             color: #24292f;
             line-height: 1.6;
+            width: 100%;
+            text-align: center;
         }
 
         .fields-table {
@@ -721,6 +717,17 @@
             }
         }
 
+        @media (max-width: 900px) {
+            .gallery-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery-item {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
         /* Estilos para el Lightbox */
         .lightbox {
             display: none;
@@ -826,41 +833,6 @@
                     <div class="stat-number fields">17/17</div>
                     <div class="stat-label">Campos Implementados</div>
                 </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                </svg>
-                <h2 class="section-title">Avances Recientes</h2>
-            </div>
-            
-            <div class="update-item">
-                <span class="update-date">3-jun-2025</span>
-                <span class="update-text">🎉 Proyecto completado al 100% - Todas las funcionalidades implementadas</span>
-            </div>
-            <div class="update-item">
-                <span class="update-date">22-may-2025</span>
-                <span class="update-text">📊 Añadidos gráficos de progreso al dashboard</span>
-            </div>
-            <div class="update-item">
-                <span class="update-date">22-may-2025</span>
-                <span class="update-text">💾 Implementada persistencia de imágenes con localStorage</span>
-            </div>
-            <div class="update-item">
-                <span class="update-date">20-may-2025</span>
-                <span class="update-text">🔍 Modifiqué la búsqueda para que busque por ID exacto del equipo</span>
-            </div>
-            <div class="update-item">
-                <span class="update-date">20-may-2025</span>
-                <span class="update-text">⚡ Mejore la función de actualización de la tabla</span>
-            </div>
-            <div class="update-item">
-                <span class="update-date">19-may-2025</span>
-                <span class="update-text">🛠️ Corrección de errores de sincronización</span>
             </div>
         </div>
 
